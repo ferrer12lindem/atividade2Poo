@@ -1,37 +1,25 @@
 package questao3;
 
-public class Voo implements TotemSalaDeDesembarque, TotemSalaDeEmbarque{
+public class Voo{  //Observer
 	
 	private int numDeVoo;
-	private Company business;
-	private Horario horario;
+	private String business;
+	private double horaSaida;
+	private double horaChegada;
 	private boolean partiuOuNao;
-	private TotemSalaDeDesembarque totemDesembarque;
-	private TotemSalaDeEmbarque totemDeEmbarque;
-	private TotemHoraEmbarqueEDesembarque toteEmbarqueDesembarque;
-
-	public Voo(int numDeVoo, Company business, Horario horario, boolean partiuOrNot) {
+	
+	public Voo(int numDeVoo, String business, double horaSaida, double horaChegada, boolean partiuOuNao) {
+		this.horaSaida = horaSaida;
+		this.horaChegada = horaChegada;
 		this.numDeVoo = numDeVoo;
 		this.business = business;
-		this.horario = horario;
-		this.partiuOuNao = partiuOrNot;
+		this.partiuOuNao = partiuOuNao;
 	}
 	
-	public Voo() {
-		
-	}
 	
-	@Override
-	public int horasQueAterrisaVoo() {
-		int resp = this.horario.getHoraAterrissagem();
-		return resp;
-	}
-	
-	@Override
-	public int horaQueSaiVoo() {
-		int resp = this.horario.getHoraDecolagem();
-		return resp;
-	}
+	public void setPartiuOuNao(boolean parteOuNao) {
+    	this.partiuOuNao = parteOuNao;
+    }
 	
 	public int getNumDeVoo() {
 		return this.numDeVoo;
@@ -41,51 +29,34 @@ public class Voo implements TotemSalaDeDesembarque, TotemSalaDeEmbarque{
 		this.numDeVoo = numDeVoo;
 	}
 	
-	public Company getEmpresa() {
+	public String getEmpresa() {
 		return this.business;
 	}
 	
-    public void setEmpresa(Company empresa) {
+    public void setEmpresa(String empresa) {
     	this.business = empresa;
-    }
-    
-    public Horario getHorario() {
-    	return this.horario;
-    }
-    
-    public void setHorario(Horario horario) {
-    	this.horario = horario;
     }
     
     public boolean getPartiuOuNao() {
     	return this.partiuOuNao;
     }
-    
-    public void setPartiuOuNao(boolean parteOuNao) {
-    	this.partiuOuNao = parteOuNao;
-    }
-	
-	public TotemSalaDeDesembarque getTotemSalaDeDesembarque() {
-		return this.totemDesembarque;
-	}
-	
-	public void setTotemSalaDeDesembarque(TotemSalaDeDesembarque totemDesembarque) {
-		this.totemDesembarque = totemDesembarque;
-	}
-	
-	public TotemSalaDeEmbarque getTotemHoraEmbarque() {
-		return this.totemDeEmbarque;
-	}
-	
-	public void setTotemSalaDeEmbarque(TotemSalaDeEmbarque totemEmbarque) {
-		this.totemDeEmbarque = totemEmbarque;
-	}
-	
-	public TotemHoraEmbarqueEDesembarque getToteEmbarqueDesembarque() {
-		return this.toteEmbarqueDesembarque;
+
+	public double getHoraSaida() {
+		return horaSaida;
 	}
 
-	public void setToteEmbarqueDesembarque(TotemHoraEmbarqueEDesembarque toteEmbarqueDesembarque) {
-		this.toteEmbarqueDesembarque = toteEmbarqueDesembarque;
+
+	public void setHoraSaida(double horaSaida) {
+		this.horaSaida = horaSaida;
 	}
+
+
+	public double getHoraChegada() {
+		return horaChegada;
+	}
+
+	public void setHoraChegada(double horaChegada) {
+		this.horaChegada = horaChegada;
+	}
+	
 }
